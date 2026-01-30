@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #020024, #090979, #000);
+    color: white;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+nav a {
+    color: #aaa;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+nav a.active, nav a:hover {
+    color: #00ffff;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+}
+
+.rocket-image {
+    width: 220px;
+    animation: float 3s ease-in-out infinite;
+}
+
+.content {
+    max-width: 500px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+}
+
+.card {
+    background: rgba(255,255,255,0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.status-box {
+    text-align: center;
+    padding: 50px;
+    font-size: 18px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    opacity: 0.6;
+}
+
+/* Animations */
+.fade-in {
+    animation: fade 2s ease;
+}
+
+.slide-up {
+    animation: slide 1.5s ease;
+}
+
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes fade {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes slide {
+    from {transform: translateY(40px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+@keyframes pulse {
+    0%, 100% {opacity: 1;}
+    50% {opacity: 0.5;}
+}
+
+@keyframes float {
+    0%, 100% {transform: translateY(0);}
+    50% {transform: translateY(-15px);}
+}
