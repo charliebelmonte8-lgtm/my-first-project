@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../../Downloads/my-first-project-main/IT223_Belmonte"
+		},
+		{
+			"path": "../../Downloads/my-first-project-main/Profile-card_Belmonte"
+		},
+		{
+			"path": "../../Downloads/my-first-project-main/ToDoListLab"
+		},
+		{
+			"path": "../../Pictures/Camera Roll"
+		},
+		{
+			"path": "../profile_picture"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "portfulio"
+	}
+}

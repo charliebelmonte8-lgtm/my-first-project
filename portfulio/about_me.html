@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    text-align: center;
+    margin: 0;
+}
+
+.container {
+    background: white;
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    margin-top: 0;
+}
+
+input, button {
+    padding: 8px;
+    margin: 5px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #ff9800;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>About Me</h1>
+    
+
+    <h2>🎮 Mini Game: Guess the Number</h2>
+    <p>Guess a number from 1 to 10</p>
+
+    <input type="number" id="guessInput">
+    <button onclick="checkGuess()">Guess</button>
+    <p id="result"></p>
+
+    <br>
+    <a href="index.html" class="btn">⬅ Back to Home</a>
+</div>
+
+<script>
+let randomNumber = Math.floor(Math.random() * 10) + 1;
+
+function checkGuess() {
+    const guess = Number(document.getElementById("guessInput").value);
+    const result = document.getElementById("result");
+
+    if (guess === randomNumber) {
+        result.textContent = "🎉 Correct! You win!";
+        randomNumber = Math.floor(Math.random() * 10) + 1;
+    } else {
+        result.textContent = "❌ Try again!";
+    }
+}
+</script>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Charlie Portfolio App</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+nav {
+    background: #333;
+    padding: 10px;
+}
+
+nav button {
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    background: #555;
+    color: white;
+    cursor: pointer;
+}
+
+nav button:hover {
+    background: #ff9800;
+}
+
+.page {
+    display: none;
+    padding: 20px;
+}
+
+.active {
+    display: block;
+}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+    <button onclick="showPage('home')">Home</button>
+    <button onclick="showPage('space')">Space</button>
+    <button onclick="showPage('profile')">Profile</button>
+    <button onclick="showPage('todo')">To-Do</button>
+</nav>
+
+<!-- INDEX 1 HOME -->
+<div id="home" class="page active">
+    <h1>Charlie J. Belmonte</h1>
+    <p>Welcome to my Portfolio App</p>
+    <a href="index.html" class="btn">profile-card</a>
+</div>
+
+<!-- INDEX 2 SPACE -->
+<div id="space" class="page">
+    <h1>🚀 The Observer</h1>
+    <p>Mission Status: Active</p>
+    <a href="index1.html" class="btn">Lab 1</a>
+</div>
+
+<!-- INDEX 3 PROFILE -->
+<div id="profile" class="page">
+    <h1>Profile Card</h1>
+    <p>Web Developer | Designer</p>
+    <p>"Coding is my passion!"</p>
+    <a href="index2.html" class="btn">Lab 2</a>
+</div>
+
+<!-- INDEX 4 TODO -->
+<div id="todo" class="page">
+    <h1>My To-Do List</h1>
+    <input type="text" id="taskInput" placeholder="Add task">
+    <button onclick="addTask()">Add</button>
+    <ul id="taskList"></ul>
+</div>
+
+<script>
+function showPage(pageId) {
+    const pages = document.querySelectorAll(".page");
+    pages.forEach(page => page.classList.remove("active"));
+    document.getElementById(pageId).classList.add("active");
+}
+
+function addTask() {
+    const input = document.getElementById("taskInput");
+    const li = document.createElement("li");
+    li.textContent = input.value;
+    document.getElementById("taskList").appendChild(li);
+    input.value = "";
+}
+</script>
+
+
+</body>
+</html>
